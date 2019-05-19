@@ -22,6 +22,7 @@
 		4E712EB02291848D00333833 /* BookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E712EAF2291848D00333833 /* BookmarkVC.swift */; };
 		4E74C9B822914D4F0012AB24 /* ExtensionUivew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E74C9B722914D4F0012AB24 /* ExtensionUivew.swift */; };
 		4E74C9BA22914E990012AB24 /* BaseSlidingMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E74C9B922914E990012AB24 /* BaseSlidingMenuVC.swift */; };
+		4E799A712291A66E002B9BBD /* ChatRoomGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E799A702291A66E002B9BBD /* ChatRoomGroupVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		4E712EAF2291848D00333833 /* BookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkVC.swift; sourceTree = "<group>"; };
 		4E74C9B722914D4F0012AB24 /* ExtensionUivew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUivew.swift; sourceTree = "<group>"; };
 		4E74C9B922914E990012AB24 /* BaseSlidingMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSlidingMenuVC.swift; sourceTree = "<group>"; };
+		4E799A702291A66E002B9BBD /* ChatRoomGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomGroupVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		4E47B75F22904A7F00EDB8AB /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				4E799A6F2291A64F002B9BBD /* chatGroup */,
 				4E74C9BB2291512C0012AB24 /* Base */,
 				4E47B74F22904A7600EDB8AB /* MainVC.swift */,
 				4E47B76222904E4900EDB8AB /* MenuVC.swift */,
@@ -132,6 +135,14 @@
 				4E74C9B922914E990012AB24 /* BaseSlidingMenuVC.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		4E799A6F2291A64F002B9BBD /* chatGroup */ = {
+			isa = PBXGroup;
+			children = (
+				4E799A702291A66E002B9BBD /* ChatRoomGroupVC.swift */,
+			);
+			path = chatGroup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +227,7 @@
 				4E47B75022904A7600EDB8AB /* MainVC.swift in Sources */,
 				4E47B74E22904A7600EDB8AB /* AppDelegate.swift in Sources */,
 				4E5FF0212291687B00D0EE72 /* CustomHeaderView.swift in Sources */,
+				4E799A712291A66E002B9BBD /* ChatRoomGroupVC.swift in Sources */,
 				4E74C9BA22914E990012AB24 /* BaseSlidingMenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

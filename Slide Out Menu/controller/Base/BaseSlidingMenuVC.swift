@@ -11,6 +11,9 @@ import UIKit
 class BaseSlidingMenuVC: UIViewController {
 
     var redViewLeadingConstraint: NSLayoutConstraint!
+    var redViewTrailingConstraint: NSLayoutConstraint!
+
+    let menuVC = ChatRoomGroupVC()
 fileprivate let menuWidth: CGFloat = 300
     fileprivate let velocityThreshold: CGFloat = 500
     var isMenuOpened = false
@@ -48,6 +51,8 @@ fileprivate let menuWidth: CGFloat = 300
         
         setupPangesture()
         setupViewControllers()
+        
+        darkCoverView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapped)))
     }
     
    
@@ -62,7 +67,7 @@ fileprivate let menuWidth: CGFloat = 300
         NSLayoutConstraint.activate([
             redView.topAnchor.constraint(equalTo: view.topAnchor),
             redView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            redView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
 
             blueView.topAnchor.constraint(equalTo: view.topAnchor),
             blueView.trailingAnchor.constraint(equalTo: redView.leadingAnchor),
@@ -73,14 +78,16 @@ fileprivate let menuWidth: CGFloat = 300
         self.redViewLeadingConstraint = redView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0)
         //        redViewLeadingConstraint.constant = 150
         redViewLeadingConstraint.isActive = true
+        redViewTrailingConstraint = redView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        redViewTrailingConstraint.isActive = true
     }
 
     func setupViewControllers()  {
-        let mainVC = MainVC()
-        let menuVC = MenuVC()
+       
+        
         
         let menuView = menuVC.view!
-       let mainView = mainVC.view!
+       let mainView = rightViewController.view!
         
         menuView.translatesAutoresizingMaskIntoConstraints = false
         mainView.translatesAutoresizingMaskIntoConstraints = false
@@ -109,7 +116,7 @@ fileprivate let menuWidth: CGFloat = 300
 //        mainView.anchor(top: redView.topAnchor, leading: redView.leadingAnchor, bottom: redView.bottomAnchor, trailing: redView.trailingAnchor)
 //        menuView.anchor(top: blueView.topAnchor, leading: blueView.leadingAnchor, bottom: blueView.bottomAnchor, trailing: blueView.trailingAnchor)
         
-        addChild(mainVC)
+        addChild(rightViewController)
         addChild(menuVC)
     }
     
@@ -162,9 +169,6 @@ fileprivate let menuWidth: CGFloat = 300
             rightViewController = UINavigationController(rootViewController: ListVC())
         case 2:
            rightViewController = BookmarkVC()
-//        case 3:
-//            let view = createVC(text: "Moments")
-//            redView.addSubview(view.view)
         default:
            
             let tabBarController = UITabBarController()
@@ -204,6 +208,7 @@ fileprivate let menuWidth: CGFloat = 300
     
      func closeMenu() {
         redViewLeadingConstraint.constant = 0
+        redViewTrailingConstraint.constant = 0
         isMenuOpened = false
         performAnimations()
     }
@@ -217,11 +222,15 @@ fileprivate let menuWidth: CGFloat = 300
         x = max(0, x)
         
         redViewLeadingConstraint.constant = x
+        redViewTrailingConstraint.constant = x
          darkCoverView.alpha = x / menuWidth
         if gesture.state == .ended {
             handleEnded(gesture)
         }
     }
     
+   @objc func handleTapped()  {
+        closeMenu()
+    }
     
 }

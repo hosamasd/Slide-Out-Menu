@@ -142,20 +142,14 @@ class MainVC: UITableViewController {
         }
     }
     
-   
-    
-    @objc func handleHide(){
-        isMenuOpened = false
-        makeAnimation(transform: .identity)
+    @objc func handleShow() {
+        (UIApplication.shared.keyWindow?.rootViewController as? BaseSlidingMenuVC)?.openMenu()
     }
     
-   
-    
-    @objc func handleShow(){
-        isMenuOpened = true
-        makeAnimation(transform: CGAffineTransform(translationX: self.menuWidth, y: 0))
-       
+    @objc func handleHide() {
+        (UIApplication.shared.keyWindow?.rootViewController as? BaseSlidingMenuVC)?.closeMenu()
     }
+    
 }
 
 extension MainVC: UIGestureRecognizerDelegate {
