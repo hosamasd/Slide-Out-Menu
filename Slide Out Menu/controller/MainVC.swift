@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class MainVC: UITableViewController {
 
      let vc = MenuVC()
     let darkCoverView = UIView()
@@ -26,7 +26,7 @@ class ViewController: UITableViewController {
         setupTableview()
         
         setupVC()
-        setupPanGesture()
+//        setupPanGesture()
         setupDarkCoverView()
     }
 
@@ -83,7 +83,7 @@ class ViewController: UITableViewController {
         })
     }
     
-    func handleEnde1d(gesture:UIPanGestureRecognizer)  {
+   fileprivate func handleEnde1d(gesture:UIPanGestureRecognizer)  {
         let translate = gesture.translation(in: view)
         let velcoity = gesture.velocity(in: view)
         
@@ -113,7 +113,9 @@ class ViewController: UITableViewController {
     }
     
     fileprivate func setupPanGesture() {
-        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan)))
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+        panGesture.delegate = self
+        view.addGestureRecognizer(panGesture)
     }
     
     //TODO: - handle methods
@@ -156,3 +158,9 @@ class ViewController: UITableViewController {
     }
 }
 
+extension MainVC: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}
