@@ -18,6 +18,8 @@
 		4E5FF02522916D9D00D0EE72 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5FF02422916D9D00D0EE72 /* CustomImageView.swift */; };
 		4E5FF0282291700E00D0EE72 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5FF0272291700E00D0EE72 /* MenuCell.swift */; };
 		4E5FF02A2291719B00D0EE72 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5FF0292291719B00D0EE72 /* MenuModel.swift */; };
+		4E712EAE22917DB500333833 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E712EAD22917DB500333833 /* ListVC.swift */; };
+		4E712EB02291848D00333833 /* BookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E712EAF2291848D00333833 /* BookmarkVC.swift */; };
 		4E74C9B822914D4F0012AB24 /* ExtensionUivew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E74C9B722914D4F0012AB24 /* ExtensionUivew.swift */; };
 		4E74C9BA22914E990012AB24 /* BaseSlidingMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E74C9B922914E990012AB24 /* BaseSlidingMenuVC.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,8 @@
 		4E5FF02422916D9D00D0EE72 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		4E5FF0272291700E00D0EE72 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		4E5FF0292291719B00D0EE72 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		4E712EAD22917DB500333833 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		4E712EAF2291848D00333833 /* BookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkVC.swift; sourceTree = "<group>"; };
 		4E74C9B722914D4F0012AB24 /* ExtensionUivew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUivew.swift; sourceTree = "<group>"; };
 		4E74C9B922914E990012AB24 /* BaseSlidingMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSlidingMenuVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +93,8 @@
 				4E74C9BB2291512C0012AB24 /* Base */,
 				4E47B74F22904A7600EDB8AB /* MainVC.swift */,
 				4E47B76222904E4900EDB8AB /* MenuVC.swift */,
+				4E712EAD22917DB500333833 /* ListVC.swift */,
+				4E712EAF2291848D00333833 /* BookmarkVC.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -200,6 +206,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E74C9B822914D4F0012AB24 /* ExtensionUivew.swift in Sources */,
+				4E712EAE22917DB500333833 /* ListVC.swift in Sources */,
+				4E712EB02291848D00333833 /* BookmarkVC.swift in Sources */,
 				4E5FF02522916D9D00D0EE72 /* CustomImageView.swift in Sources */,
 				4E5FF02A2291719B00D0EE72 /* MenuModel.swift in Sources */,
 				4E5FF0282291700E00D0EE72 /* MenuCell.swift in Sources */,

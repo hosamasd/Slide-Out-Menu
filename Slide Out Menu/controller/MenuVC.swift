@@ -31,8 +31,10 @@ class MenuVC: UITableViewController {
         return custom
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 200
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let baseSlid = UIApplication.shared.keyWindow?.rootViewController as? BaseSlidingMenuVC
+        baseSlid?.didSelectItemAtIndex(index: indexPath)
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

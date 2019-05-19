@@ -36,7 +36,8 @@ fileprivate let menuWidth: CGFloat = 300
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
-   
+    var rightViewController: UIViewController = UINavigationController(rootViewController: MainVC())
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -150,6 +151,44 @@ fileprivate let menuWidth: CGFloat = 300
        
      }
     
+    func didSelectItemAtIndex(index:IndexPath)  {
+        performRightViewCleanUp()
+         closeMenu()
+        
+        switch index.row {
+        case 0:
+            rightViewController = UINavigationController(rootViewController: MainVC())
+        case 1:
+            rightViewController = UINavigationController(rootViewController: ListVC())
+        case 2:
+           rightViewController = BookmarkVC()
+//        case 3:
+//            let view = createVC(text: "Moments")
+//            redView.addSubview(view.view)
+        default:
+           
+            let tabBarController = UITabBarController()
+            let momentsController = UIViewController()
+            momentsController.navigationItem.title = "Moments"
+            momentsController.view.backgroundColor = .orange
+            let navController = UINavigationController(rootViewController: momentsController)
+            navController.tabBarItem.title = "Moments"
+            tabBarController.viewControllers = [navController]
+            rightViewController = tabBarController
+        }
+        redView.addSubview(rightViewController.view)
+        addChild(rightViewController)
+        redView.bringSubviewToFront(darkCoverView)
+       
+    }
+    
+    func performRightViewCleanUp()  {
+        rightViewController.view.removeFromSuperview()
+        rightViewController.removeFromParent()
+    }
+    
+   
+    
     fileprivate func performAnimations() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
@@ -157,13 +196,13 @@ fileprivate let menuWidth: CGFloat = 300
         })
     }
     
-    fileprivate func openMenu() {
+     func openMenu() {
         isMenuOpened = true
         redViewLeadingConstraint.constant = menuWidth
         performAnimations()
     }
     
-    fileprivate func closeMenu() {
+     func closeMenu() {
         redViewLeadingConstraint.constant = 0
         isMenuOpened = false
         performAnimations()
