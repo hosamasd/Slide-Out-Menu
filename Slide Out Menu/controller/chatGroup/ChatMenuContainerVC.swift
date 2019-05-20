@@ -17,6 +17,7 @@ class ChatMenuContainerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchContainer.searchBar.delegate = chatroomsMenuController
         view.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.2078431373, blue: 0.2862745098, alpha: 1)
         
         let chatroomsView = chatroomsMenuController.view!
@@ -35,7 +36,7 @@ class ChatMenuContainerVC: UIViewController {
 
 class SearchContainerView: UIView {
     
-    let searchBar: UISearchBar = {
+    let  searchBar: UISearchBar = {
         let sb = UISearchBar()
         sb.searchBarStyle = .minimal
         sb.placeholder = "Enter some filer"

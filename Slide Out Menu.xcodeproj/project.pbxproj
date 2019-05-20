@@ -102,7 +102,6 @@
 				4E47B76222904E4900EDB8AB /* MenuVC.swift */,
 				4E712EAD22917DB500333833 /* ListVC.swift */,
 				4E712EAF2291848D00333833 /* BookmarkVC.swift */,
-				4EA6D865229290C40080F7B6 /* ChatMenuContainerVC.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -147,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				4E799A702291A66E002B9BBD /* ChatMenuGroupVC.swift */,
+				4EA6D865229290C40080F7B6 /* ChatMenuContainerVC.swift */,
 			);
 			path = chatGroup;
 			sourceTree = "<group>";

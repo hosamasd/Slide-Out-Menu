@@ -16,14 +16,16 @@ class ChatMenuGroupVC: UITableViewController {
         ["jobs"],
         ["Brian Voong", "Steve Jobs", "Tim Cook", "Barack Obama"]
     ]
+    var filteredArray = [[String]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        filteredArray = chatroomGroups
         setupTableView()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return chatroomGroups.count
+        return filteredArray.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -44,7 +46,7 @@ class ChatMenuGroupVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatroomGroups[section].count
+        return filteredArray[section].count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,7 +54,7 @@ class ChatMenuGroupVC: UITableViewController {
         
        
         // so what is the text to fill out?
-        let text = chatroomGroups[indexPath.section][indexPath.row]
+        let text = filteredArray[indexPath.section][indexPath.row]
         let attributedText = NSMutableAttributedString(string: "#  ", attributes: [.foregroundColor:  #colorLiteral(red: 0.4745098039, green: 0.4078431373, blue: 0.4666666667, alpha: 1), .font: UIFont.systemFont(ofSize: 18, weight: .regular)])
         attributedText.append(NSAttributedString(string: text, attributes: [.foregroundColor: UIColor.white]))
         cell.textLabel?.attributedText = attributedText
@@ -73,5 +75,34 @@ class ChatMenuGroupVC: UITableViewController {
 class HeightForHeaderLabel: UILabel {
     override func drawText(in rect: CGRect) {
         super.drawText(in: rect.insetBy(dx: 16, dy: 0))
+    }
+}
+
+extension ChatMenuGroupVC: UISearchBarDelegate{
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            filteredArray = chatroomGroups
+            tableView.reloadData()
+            return
+        }
+        
+        //multi line for fetch
+//        var results = [[String]]()
+//
+//        self.chatroomGroups.forEach { (group) in
+//            let filtered = group.filter({ (name) -> Bool in
+//                return name.lowercased().contains(searchText.lowercased())
+//            })
+//            results.append(filtered)
+//        }
+//        print(results)
+//        filteredArray = results
+        
+        //single line for fetch
+        filteredArray = chatroomGroups.map({ (group) -> [String] in
+            group.filter {$0.lowercased().contains(searchText.lowercased()) }
+        })
+        tableView.reloadData()
     }
 }
