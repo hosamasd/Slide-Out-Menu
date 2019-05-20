@@ -83,7 +83,8 @@ class MainVC: UITableViewController {
     
     fileprivate  func setupTableview()  {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
-        tableView.backgroundColor = .red
+        tableView.backgroundColor = .white
+        tableView.tableFooterView = UIView()
     }
     
     fileprivate func setupVC() {
