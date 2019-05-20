@@ -25,7 +25,7 @@ class MenuCell: UITableViewCell {
         return im
     }()
     let labelTitle:UILabel = {
-        let la = UILabel(string: "homepage", font: .boldSystemFont(ofSize: 18))
+        let la = UILabel(string: "homepage", font: .boldSystemFont(ofSize: 18),numberOfLines:0)
         
         return la
     }()

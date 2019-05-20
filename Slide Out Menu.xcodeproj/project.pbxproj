@@ -22,7 +22,9 @@
 		4E712EB02291848D00333833 /* BookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E712EAF2291848D00333833 /* BookmarkVC.swift */; };
 		4E74C9B822914D4F0012AB24 /* ExtensionUivew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E74C9B722914D4F0012AB24 /* ExtensionUivew.swift */; };
 		4E74C9BA22914E990012AB24 /* BaseSlidingMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E74C9B922914E990012AB24 /* BaseSlidingMenuVC.swift */; };
-		4E799A712291A66E002B9BBD /* ChatRoomGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E799A702291A66E002B9BBD /* ChatRoomGroupVC.swift */; };
+		4E799A712291A66E002B9BBD /* ChatMenuGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E799A702291A66E002B9BBD /* ChatMenuGroupVC.swift */; };
+		4EA6D8642292898F0080F7B6 /* MenuGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA6D8632292898F0080F7B6 /* MenuGroupCell.swift */; };
+		4EA6D866229290C40080F7B6 /* ChatMenuContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA6D865229290C40080F7B6 /* ChatMenuContainerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +45,9 @@
 		4E712EAF2291848D00333833 /* BookmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkVC.swift; sourceTree = "<group>"; };
 		4E74C9B722914D4F0012AB24 /* ExtensionUivew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUivew.swift; sourceTree = "<group>"; };
 		4E74C9B922914E990012AB24 /* BaseSlidingMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSlidingMenuVC.swift; sourceTree = "<group>"; };
-		4E799A702291A66E002B9BBD /* ChatRoomGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomGroupVC.swift; sourceTree = "<group>"; };
+		4E799A702291A66E002B9BBD /* ChatMenuGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMenuGroupVC.swift; sourceTree = "<group>"; };
+		4EA6D8632292898F0080F7B6 /* MenuGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuGroupCell.swift; sourceTree = "<group>"; };
+		4EA6D865229290C40080F7B6 /* ChatMenuContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMenuContainerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 				4E47B76222904E4900EDB8AB /* MenuVC.swift */,
 				4E712EAD22917DB500333833 /* ListVC.swift */,
 				4E712EAF2291848D00333833 /* BookmarkVC.swift */,
+				4EA6D865229290C40080F7B6 /* ChatMenuContainerVC.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			children = (
 				4E5FF02622916FF800D0EE72 /* custom header */,
 				4E5FF0272291700E00D0EE72 /* MenuCell.swift */,
+				4EA6D8632292898F0080F7B6 /* MenuGroupCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -140,7 +146,7 @@
 		4E799A6F2291A64F002B9BBD /* chatGroup */ = {
 			isa = PBXGroup;
 			children = (
-				4E799A702291A66E002B9BBD /* ChatRoomGroupVC.swift */,
+				4E799A702291A66E002B9BBD /* ChatMenuGroupVC.swift */,
 			);
 			path = chatGroup;
 			sourceTree = "<group>";
@@ -216,8 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EA6D8642292898F0080F7B6 /* MenuGroupCell.swift in Sources */,
 				4E74C9B822914D4F0012AB24 /* ExtensionUivew.swift in Sources */,
 				4E712EAE22917DB500333833 /* ListVC.swift in Sources */,
+				4EA6D866229290C40080F7B6 /* ChatMenuContainerVC.swift in Sources */,
 				4E712EB02291848D00333833 /* BookmarkVC.swift in Sources */,
 				4E5FF02522916D9D00D0EE72 /* CustomImageView.swift in Sources */,
 				4E5FF02A2291719B00D0EE72 /* MenuModel.swift in Sources */,
@@ -227,7 +235,7 @@
 				4E47B75022904A7600EDB8AB /* MainVC.swift in Sources */,
 				4E47B74E22904A7600EDB8AB /* AppDelegate.swift in Sources */,
 				4E5FF0212291687B00D0EE72 /* CustomHeaderView.swift in Sources */,
-				4E799A712291A66E002B9BBD /* ChatRoomGroupVC.swift in Sources */,
+				4E799A712291A66E002B9BBD /* ChatMenuGroupVC.swift in Sources */,
 				4E74C9BA22914E990012AB24 /* BaseSlidingMenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

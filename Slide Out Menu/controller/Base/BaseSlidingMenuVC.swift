@@ -13,7 +13,7 @@ class BaseSlidingMenuVC: UIViewController {
     var redViewLeadingConstraint: NSLayoutConstraint!
     var redViewTrailingConstraint: NSLayoutConstraint!
 
-    let menuVC = ChatRoomGroupVC()
+    let menuVC = ChatMenuContainerVC()
 fileprivate let menuWidth: CGFloat = 300
     fileprivate let velocityThreshold: CGFloat = 500
     var isMenuOpened = false
@@ -204,6 +204,7 @@ fileprivate let menuWidth: CGFloat = 300
         isMenuOpened = true
         redViewLeadingConstraint.constant = menuWidth
         performAnimations()
+        setNeedsStatusBarAppearanceUpdate() // for indicate system to any changes in status bar
     }
     
      func closeMenu() {
@@ -211,6 +212,11 @@ fileprivate let menuWidth: CGFloat = 300
         redViewTrailingConstraint.constant = 0
         isMenuOpened = false
         performAnimations()
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return isMenuOpened ? .lightContent : .default
     }
     
     @objc func handlePan(gesture: UIPanGestureRecognizer) {

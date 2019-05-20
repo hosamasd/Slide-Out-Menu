@@ -117,9 +117,27 @@ extension UIColor{
     }
 }
 extension UILabel {
-    convenience init(string:String, font:UIFont){
+    convenience init(string:String, font:UIFont,numberOfLines: Int){
         self.init(frame: .zero)
         self.text = string
         self.font = font
+        self.numberOfLines = numberOfLines
+    }
+    
+    convenience init(string:String,numberOfLines: Int){
+        self.init(frame: .zero)
+        self.text = string
+       self.numberOfLines = numberOfLines
+    }
+}
+extension UIButton {
+    convenience init(title:String, titleColor: UIColor, font: UIFont,
+        backgroundColor: UIColor, target: Any, action: Selector){
+        self.init(frame: .zero)
+        self.setTitle(title, for: .normal)
+        self.setTitleColor(titleColor, for: .normal)
+        self.titleLabel?.font =  font
+        self.backgroundColor = backgroundColor
+        self.addTarget(target, action:  action, for: .touchUpInside)
     }
 }

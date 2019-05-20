@@ -18,12 +18,12 @@ class CustomHeaderView: UIView {
         return im
     }()
     let labelName:UILabel = {
-       let la = UILabel(string: "hosam mohamed", font: .boldSystemFont(ofSize: 18))
+        let la = UILabel(string: "hosam mohamed", font: .boldSystemFont(ofSize: 18),numberOfLines: 0)
         
         return la
     }()
     let labelEmail:UILabel = {
-        let la = UILabel(string: "@hosam mohamed", font: .systemFont(ofSize: 16))
+        let la = UILabel(string: "@hosam mohamed", font: .systemFont(ofSize: 16),numberOfLines: 0)
         
         return la
     }()
