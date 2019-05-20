@@ -9,8 +9,8 @@
 import UIKit
 
 class ChatMenuGroupVC: UITableViewController {
-    let cellId = "cellId"
     
+    fileprivate let cellId = "cellId"
     let chatroomGroups = [
         ["general", "introductions"],
         ["jobs"],
@@ -23,6 +23,8 @@ class ChatMenuGroupVC: UITableViewController {
         filteredArray = chatroomGroups
         setupTableView()
     }
+    
+    //MARK:-UITableView methods
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return filteredArray.count
@@ -52,9 +54,7 @@ class ChatMenuGroupVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MenuGroupCell
         
-       
-        // so what is the text to fill out?
-        let text = filteredArray[indexPath.section][indexPath.row]
+       let text = filteredArray[indexPath.section][indexPath.row]
         let attributedText = NSMutableAttributedString(string: "#  ", attributes: [.foregroundColor:  #colorLiteral(red: 0.4745098039, green: 0.4078431373, blue: 0.4666666667, alpha: 1), .font: UIFont.systemFont(ofSize: 18, weight: .regular)])
         attributedText.append(NSAttributedString(string: text, attributes: [.foregroundColor: UIColor.white]))
         cell.textLabel?.attributedText = attributedText
@@ -64,6 +64,8 @@ class ChatMenuGroupVC: UITableViewController {
         
         return cell
     }
+    
+    //MARK:- user methods
     
     func setupTableView()  {
         tableView.separatorStyle = .none
@@ -88,16 +90,16 @@ extension ChatMenuGroupVC: UISearchBarDelegate{
         }
         
         //multi line for fetch
-//        var results = [[String]]()
-//
-//        self.chatroomGroups.forEach { (group) in
-//            let filtered = group.filter({ (name) -> Bool in
-//                return name.lowercased().contains(searchText.lowercased())
-//            })
-//            results.append(filtered)
-//        }
-//        print(results)
-//        filteredArray = results
+        //        var results = [[String]]()
+        //
+        //        self.chatroomGroups.forEach { (group) in
+        //            let filtered = group.filter({ (name) -> Bool in
+        //                return name.lowercased().contains(searchText.lowercased())
+        //            })
+        //            results.append(filtered)
+        //        }
+        //        print(results)
+        //        filteredArray = results
         
         //single line for fetch
         filteredArray = chatroomGroups.map({ (group) -> [String] in

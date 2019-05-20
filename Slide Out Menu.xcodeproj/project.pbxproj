@@ -81,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				4E47B74D22904A7600EDB8AB /* AppDelegate.swift */,
+				4EFA97452292A0F700B46E3D /* Helpers */,
 				4E47B76022904A8800EDB8AB /* model */,
 				4E47B76122904A8E00EDB8AB /* view */,
 				4E47B75F22904A7F00EDB8AB /* controller */,
@@ -88,7 +89,6 @@
 				4E47B75422904A7800EDB8AB /* Assets.xcassets */,
 				4E47B75622904A7800EDB8AB /* LaunchScreen.storyboard */,
 				4E47B75922904A7800EDB8AB /* Info.plist */,
-				4E74C9B722914D4F0012AB24 /* ExtensionUivew.swift */,
 			);
 			path = "Slide Out Menu";
 			sourceTree = "<group>";
@@ -149,6 +149,14 @@
 				4EA6D865229290C40080F7B6 /* ChatMenuContainerVC.swift */,
 			);
 			path = chatGroup;
+			sourceTree = "<group>";
+		};
+		4EFA97452292A0F700B46E3D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4E74C9B722914D4F0012AB24 /* ExtensionUivew.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -11,10 +11,10 @@ import UIKit
 class CustomHeaderView: UIView {
     
     let mainImage:CustomImageView = {
-       let im = CustomImageView(size: 48)
+        let im = CustomImageView(size: 48)
         im.image = #imageLiteral(resourceName: "profile")
         im.layer.cornerRadius = 48 / 2
-         im.clipsToBounds = true
+        im.clipsToBounds = true
         return im
     }()
     let labelName:UILabel = {
@@ -37,7 +37,7 @@ class CustomHeaderView: UIView {
         attributedText.append(NSAttributedString(string: "Followers", attributes: [.foregroundColor: UIColor.black]))
         
         statsLabel.attributedText = attributedText
-       return statsLabel
+        return statsLabel
     }()
     
     override init(frame: CGRect) {
@@ -49,16 +49,15 @@ class CustomHeaderView: UIView {
     
     func setupViews()  {
         let arragedViews = [
-        UIView(),
-        UIStackView(arrangedSubviews: [mainImage,UIView()]),
-        labelName,
-        labelEmail,
-        SeperatorView(space: 16),
-        labelFollowers
+            UIView(),
+            UIStackView(arrangedSubviews: [mainImage,UIView()]),
+            labelName,
+            labelEmail,
+            SeperatorView(space: 16),
+            labelFollowers
         ]
         
         let mainStack = UIStackView(arrangedSubviews: arragedViews)
-//        mainStack.distribution = .fillProportionally
         mainStack.axis = .vertical
         mainStack.spacing = 4
         

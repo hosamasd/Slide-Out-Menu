@@ -10,20 +10,21 @@ import UIKit
 
 class MenuVC: UITableViewController {
     
-    let cellid = "cellid"
+   fileprivate let cellid = "cellid"
     let menuItems = [
         MenuModel(icon: #imageLiteral(resourceName: "profile"), title: "Profile"),
         MenuModel(icon: #imageLiteral(resourceName: "lists"), title: "Lists"),
         MenuModel(icon: #imageLiteral(resourceName: "bookmarks"), title: "Bookmarks"),
         MenuModel(icon: #imageLiteral(resourceName: "moments"), title: "Moments"),
         ]
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableview()
     }
+    
+    //MARK:-UITableView methods
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let custom = CustomHeaderView()
@@ -34,8 +35,7 @@ class MenuVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let baseSlid = UIApplication.shared.keyWindow?.rootViewController as? BaseSlidingMenuVC
         baseSlid?.didSelectItemAtIndex(index: indexPath)
-        
-    }
+   }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuItems.count
@@ -50,7 +50,9 @@ class MenuVC: UITableViewController {
         return cell
     }
     
-    func setupTableview()  {
+    //MARK:- user methods
+    
+    fileprivate func setupTableview()  {
         tableView.register(MenuCell.self, forCellReuseIdentifier: cellid)
         tableView.backgroundColor = .white
         tableView.tableFooterView = UIView()

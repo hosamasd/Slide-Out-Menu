@@ -29,6 +29,7 @@ class MenuCell: UITableViewCell {
         
         return la
     }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -38,9 +39,9 @@ class MenuCell: UITableViewCell {
     func setupViews()  {
         backgroundColor = .white
         let arragedViews = [
-          mainImage,
-           labelTitle,
-           UIView()
+            mainImage,
+            labelTitle,
+            UIView()
         ]
         let mainStack = UIStackView(arrangedSubviews: arragedViews)
         mainStack.spacing = 12
@@ -48,6 +49,7 @@ class MenuCell: UITableViewCell {
         
         mainStack.fillSuperview(padding: .init(top: 8, left: 12, bottom: 8, right: 12))
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

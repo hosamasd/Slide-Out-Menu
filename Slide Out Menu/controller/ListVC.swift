@@ -10,7 +10,7 @@ import UIKit
 
 class ListVC: UIViewController {
     
-    lazy var mainLabel:UILabel = {
+    lazy  var mainLabel:UILabel = {
         let label = UILabel()
         label.text = "Lists"
         label.font = UIFont.boldSystemFont(ofSize: 64)
