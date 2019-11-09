@@ -2,6 +2,10 @@
 Simple slide menu that can swap to see menu and i included different menus for this app.
 final menu with static data and search bar inside it to search and find your search text. Enjoy
 
+demo video.
+
+![Alt Text](https://j.gifs.com/oVJJNK.gif)
+
 ![1](https://user-images.githubusercontent.com/34996617/58015927-c3fd1080-7afc-11e9-855f-590743384b92.png)
 ![2](https://user-images.githubusercontent.com/34996617/58015928-c3fd1080-7afc-11e9-8b52-8c688c3258d3.png)
 ![3](https://user-images.githubusercontent.com/34996617/58015929-c3fd1080-7afc-11e9-843f-3dc2e21a2b1b.png)
